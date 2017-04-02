@@ -44,7 +44,8 @@
   "token_type": "Bearer"
 }</pre></p>
         <h2>Request</h2>
-    <p><a href="#csharp">c#</a>, <a href="#java">java</a>, <a href="#php">php</a>, <a href="#node">Node</a>, <a href="#python">Python</a>,
+    <p><a href="#csharp">c#</a>, <a href="#java">java</a>, <a href="#php">php</a>, 
+    <a href="#node">Node</a>, <a href="#python">Python</a>,<a href="#go">Go</a>,
     </p>
     <div>
         <div>
@@ -167,6 +168,42 @@ res = conn.getresponse()
 data = res.read()
 
 print(data.decode("utf-8"))
+            </code></pre>
+        </div>
+         <div id="go">
+            <h3>Go</h3>
+            <pre><code>
+   package main
+
+import (
+	"fmt"
+	"strings"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://oauth2test.signere.com/connect/token"
+
+	payload := strings.NewReader("grant_type=client_credentials&scope=theScope")
+
+	req, _ := http.NewRequest("POST", url, payload)
+
+	req.Header.Add("content-type", "application/x-www-form-urlencoded")
+	req.Header.Add("authorization", "Basic Q2xpZW50SWQ6Q2xpZW50U2VjcmV0")
+	req.Header.Add("cache-control", "no-cache")
+	req.Header.Add("postman-token", "5638459e-7868-21fb-e8c2-655aa98c9917")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}
             </code></pre>
         </div>
     </div>
