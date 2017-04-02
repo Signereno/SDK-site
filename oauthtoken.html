@@ -46,6 +46,7 @@
         <h2>Request</h2>
     <p><a href="#csharp">c#</a>, <a href="#java">java</a>, <a href="#php">php</a>, 
     <a href="#node">Node</a>, <a href="#python">Python</a>,<a href="#go">Go</a>,
+    <a href="#ruby">Ruby</a>
     </p>
     <div>
         <div>
@@ -204,6 +205,29 @@ func main() {
 	fmt.Println(string(body))
 
 }
+            </code></pre>
+        </div>
+        <div id="ruby">
+            <h3>Ruby</h3>
+            <pre><code>
+  require 'uri'
+require 'net/http'
+
+url = URI("https://oauth2test.signere.com/connect/token")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/x-www-form-urlencoded'
+request["authorization"] = 'Basic Q2xpZW50SWQ6Q2xpZW50U2VjcmV0'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '8bc4f440-9510-a549-9763-5d45817d2398'
+request.body = "grant_type=client_credentials&scope=theScope"
+
+response = http.request(request)
+puts response.read_body
             </code></pre>
         </div>
     </div>
