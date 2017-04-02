@@ -30,23 +30,26 @@
 
 <body>
     <h1>How to create a Ouath token</h1>
-    <p>The url is set to the production URL: <a href="https://oauth.signere.no/connect/token" target="_blank">https://oauth.signere.no/connect/token</a>        for test enviroment the url is: <a href="https://oauth2test.signere.com/connect/token" target="_blank">
+    <p>The url is set to the production URL: <a href="https://oauth.signere.no/connect/token" target="_blank">https://oauth.signere.no/connect/token</a>,
+        to use the test enviroment the url is: <a href="https://oauth2test.signere.com/connect/token" target="_blank">
      https://oauth2test.signere.com/connect/token</a></p>
     <p>The included authorization header <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank"> HTTP basic auth</a>        that is created like this: [ClientId]:[Secret]".ToBase64String() (utf-8) (Pseudo code). In the example code below
         the scope is set to theScope multiple scopes could be set by using a whitespace as seperator.
     </p>
     <h2>Response</h2>
-        <p>The response is a json like the one below. You should use the accesstoken to connect to our API's named access_token. You then add this token to the header in the requests to this API:
-   Authorization: Bearer [access_token]. The accesstoken shoud be cached as long as the expires_in property (in seconds) to avoid getting new tokens for each request.
-   <pre>{
+    <p>The response is a json like the one below. You should use the accesstoken to connect to our API's named access_token.
+        You then add this token to the header in the requests to this API: Authorization: Bearer [access_token]. The accesstoken
+        shoud be cached as long as the expires_in property (in seconds) to avoid getting new tokens for each request.
+        <pre>{
   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkhLaDkxUU9qRmpCaDVTaGoySFg0Tm1FRmpwbyIsImtpZCI6IkhLaDkxUU9qRmpCaDVTaGoySFg0Tm1FRmpwbyJ9.eyJpc3MiOiJodHRwczovL29hdXRoMnRlc3Quc2lnbmVyZS5jb20iLCJhdWQiOiJodHRwczovL29hdXRoMnRlc3Quc2lnbmVyZS5jb20vcmVzb3VyY2VzIiwiZXhwIjoxNDkxMTM5NzQxLCJuYmYiOjE0OTExMzYxNDEsImNsaWVudF9pZCI6Ijc4YWVhZTE0LWRhNGYtNDE4MC1hMzdjLWE3N2JmZTQ3ZmNiOCIsImNsaWVudF9wcm92aWRlcmlkIjoiYzRhYjYzYWUtODFiNi00OWQyLWI3NWMtYTE3MzAxMDcxMTg4Iiwic2NvcGUiOiJibG9jayIsImp0aSI6ImFlMzhlYmQ2ZTc5ZjM5MjRkMjk2OTMxNTU3NzhlYTA1In0.huqC59QAIQq3SEl60Dh4VEuCrof0aKaqdWrd_NDLjgUeLYrprg1JbX3A1X3GLNsDAXsSJghDnInuSemjtVWcYIn_tOiM7V9094iw3pbdqkPuxwjra1xniAzCR-pmeu3eo4RFeSbplz_NBwuwGhOZZ-BRLYwyfQfJDZo9cQZ9a5stsnqD23Y6jRO6CMy5wUewvqW6k0neAfg1MKqIT8w8lOzMqmSeoXK9FCHm5FILZlOf5c4wrR-sNAJtvbajSjR2FongfyUdx0FomVhLXyj546QZZU1p-je3InzsDBc59DNVNXW51OSRlajSej9tg1Cqai5EkSfNqmMYjRGsqFqrHA",
   "expires_in": 3600,
   "token_type": "Bearer"
-}</pre></p>
-        <h2>Request</h2>
-    <p><a href="#csharp">c#</a>, <a href="#java">java</a>, <a href="#php">php</a>, 
-    <a href="#node">Node</a>, <a href="#python">Python</a>, <a href="#go">Go</a>, 
-    <a href="#ruby">Ruby</a>
+}</pre>
+    </p>
+    <h2>Request</h2>
+    <p><a href="#csharp">c#</a>, <a href="#java">java</a>, <a href="#php">php</a>,
+        <a href="#node">Node</a>, <a href="#python">Python</a>, <a href="#go">Go</a>,
+        <a href="#ruby">Ruby</a>
     </p>
     <div>
         <div>
@@ -171,7 +174,7 @@ data = res.read()
 print(data.decode("utf-8"))
             </code></pre>
         </div>
-         <div id="go">
+        <div id="go">
             <h3>Go</h3>
             <pre><code>
    package main
