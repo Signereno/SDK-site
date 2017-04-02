@@ -194,7 +194,6 @@ func main() {
 	req.Header.Add("content-type", "application/x-www-form-urlencoded")
 	req.Header.Add("authorization", "Basic Q2xpZW50SWQ6Q2xpZW50U2VjcmV0")
 	req.Header.Add("cache-control", "no-cache")
-	req.Header.Add("postman-token", "5638459e-7868-21fb-e8c2-655aa98c9917")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -223,7 +222,6 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/x-www-form-urlencoded'
 request["authorization"] = 'Basic Q2xpZW50SWQ6Q2xpZW50U2VjcmV0'
 request["cache-control"] = 'no-cache'
-request["postman-token"] = '8bc4f440-9510-a549-9763-5d45817d2398'
 request.body = "grant_type=client_credentials&scope=theScope"
 
 response = http.request(request)
