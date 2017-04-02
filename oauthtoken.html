@@ -6,7 +6,7 @@
     <!-- needed for adaptive design -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Signere.no Norges raskeste og enkleste vei til elektronisk signatur">
+    <meta name="description" content="Signere.no - den raskeste og enkleste veien til elektronisk signatur og identifisering">
     <meta name="author" content="Signere.no">
 
     <link href="https://az788262.vo.msecnd.net/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -29,8 +29,9 @@
 </head>
 
 <body>
-    <h1>How to create a Ouath token</h1>
-    <p>The url is set to the production URL: <a href="https://oauth.signere.no/connect/token" target="_blank">https://oauth.signere.no/connect/token</a>,
+    <h1>Short guide for how to create an OAuth token</h1>
+	<p>Most API requests that you can make towards Signere APIs, require OAuth authentication. Below we give a brief description of how you can obtain an OAuth token to be used when you make API requests towards the different Signere services.</p>
+	<p>The url is set to the production URL: <a href="https://oauth.signere.no/connect/token" target="_blank">https://oauth.signere.no/connect/token</a>,
         to use the test enviroment the url is: <a href="https://oauth2test.signere.com/connect/token" target="_blank">
      https://oauth2test.signere.com/connect/token</a></p>
     <p>The included authorization header <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank"> HTTP basic auth</a>        that is created like this: [ClientId]:[Secret]".ToBase64String() (utf-8) (Pseudo code). In the example code below
