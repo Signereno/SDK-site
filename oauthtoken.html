@@ -50,7 +50,13 @@
         <div>
             <h3>c#</h3>
             <pre><code>
- 
+ var client = new RestClient("https://oauth2test.signere.com/connect/token");
+var request = new RestRequest(Method.POST);
+request.AddHeader("cache-control", "no-cache");
+request.AddHeader("authorization", "Basic Q2xpZW50SWQ6Q2xpZW50U2VjcmV0");
+request.AddHeader("content-type", "application/x-www-form-urlencoded");
+request.AddParameter("application/x-www-form-urlencoded", "grant_type=client_credentials&scope=theScope", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
             </code></pre>
         </div>
         <div id="java">
