@@ -80,10 +80,7 @@ Response response = client.newCall(request).execute();
         <div id="php">
             <h3>PHP</h3>
             <pre><code>
- <?php
-
 $curl = curl_init();
-
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://oauth2test.signere.com/connect/token",
   CURLOPT_RETURNTRANSFER => true,
@@ -110,6 +107,7 @@ if ($err) {
 } else {
   echo $response;
 }
+
             </code></pre>
         </div>
         <div id="node">
