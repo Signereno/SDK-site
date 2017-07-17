@@ -15,7 +15,20 @@
        <script type="text/javascript">
 	var script = document.createElement("script");
 	script.src="https://dxjs.apimatic.io/static/js/portal.v2.js";
-	script.onload = function() { APIMaticDevPortal.show({ container: "apimatic-widget", apiKey: "oMgRQbHtKaQOzYtZUhkceEzHDSCoU28IRzPkc0r4Zq8GnoVkHnSwbkTBiePsCDlp", baseTheme: "light" }); };
+	script.onload = function() { 
+        APIMaticDevPortal.show(
+            { 
+                container: "apimatic-widget", 
+                apiKey: "oMgRQbHtKaQOzYtZUhkceEzHDSCoU28IRzPkc0r4Zq8GnoVkHnSwbkTBiePsCDlp", 
+                baseTheme: "light" ,
+                allowedLanguages: [ "java_eclipse_jre_lib","php_generic_lib","node_javascript_lib" ],
+                themeOverrides: {
+                palette: {
+                    primaryColor1: "#3333CC"
+                }
+        },
+            }); 
+        };
 	 document.getElementsByTagName("head")[0].appendChild(script);
 </script>
 <div id="apimatic-widget"/>
